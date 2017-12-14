@@ -20,8 +20,7 @@
             echo $this->Form->control('name');
             echo $this->Form->control('description');
             echo $this->Form->control('duration');
-            echo $this->Form->control('release_date');
-            
+            echo $this->Form->control('releasedate');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
