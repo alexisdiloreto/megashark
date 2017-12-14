@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\RoomsTable;
+use App\Model\Table\MoviesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\RoomsTable Test Case
+ * App\Model\Table\MoviesTable Test Case
  */
-class RoomsTableTest extends TestCase
+class MoviesTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\RoomsTable
+     * @var \App\Model\Table\MoviesTable
      */
-    public $Rooms;
+    public $Movies;
 
     /**
      * Fixtures
@@ -24,7 +24,8 @@ class RoomsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.rooms'
+        'app.movies',
+        'app.showtimes'
     ];
 
     /**
@@ -35,8 +36,8 @@ class RoomsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Rooms') ? [] : ['className' => RoomsTable::class];
-        $this->Rooms = TableRegistry::get('Rooms', $config);
+        $config = TableRegistry::exists('Movies') ? [] : ['className' => MoviesTable::class];
+        $this->Movies = TableRegistry::get('Movies', $config);
     }
 
     /**
@@ -46,7 +47,7 @@ class RoomsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Rooms);
+        unset($this->Movies);
 
         parent::tearDown();
     }
